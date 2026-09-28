@@ -14,12 +14,21 @@ opencode skills that generate self-contained HTML artifacts - presentations, int
 
 ### As an opencode plugin (recommended)
 
-Add the plugin to your opencode config. Either reference the file directly:
+Add the plugin to your opencode config. Three ways: reference the file directly:
 
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": ["file:///abs/path/to/artifacts-opencode/.opencode/plugins/artifacts.js"]
+}
+```
+
+…or reference the repo folder directly (opencode resolves the folder's `package.json` `main` - the same mechanism as the `superpowers` plugin):
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["/abs/path/to/artifacts-opencode"]
 }
 ```
 
@@ -53,6 +62,8 @@ Add the skills directory directly:
   "skills": { "paths": ["/abs/path/to/artifacts-opencode/skills"] }
 }
 ```
+
+> `skills.paths` is the same field the plugin's `config` hook sets automatically - use this section only if you want skills without the plugin.
 
 Then restart opencode.
 

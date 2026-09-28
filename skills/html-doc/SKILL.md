@@ -104,12 +104,15 @@ th { color: var(--muted); font-weight: 600; }
   metrics.forEach(function (m) {
     var p = document.createElement('p');
     p.style.margin = '4px 0';
-    p.innerHTML = '<strong>' + m.value + '</strong> ' + m.label;
+    var strong = document.createElement('strong');
+    strong.textContent = String(m.value);
+    p.appendChild(strong);
+    p.appendChild(document.createTextNode(' ' + m.label));
     metricsEl.appendChild(p);
   });
 
   var chartEl = document.getElementById('chart');
-  var max = Math.max.apply(null, chartData.map(function (d) { return d.value; }));
+  var max = Math.max.apply(null, chartData.map(function (d) { return d.value; })) || 1;
   chartData.forEach(function (d) {
     var row = document.createElement('div');
     row.className = 'row';

@@ -14,7 +14,7 @@
   },
   "keywords": ["opencode", "skills", "artifacts", "presentation", "canvas"],
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "@opencode-ai/plugin": "^1.4.3"
   }
 }

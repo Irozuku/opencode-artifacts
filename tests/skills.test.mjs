@@ -26,5 +26,8 @@ for (const dir of skillDirs) {
     assert.ok(content.length > 100, 'SKILL.md has a real body');
     assert.equal(fm.name, dir.name, 'frontmatter name matches folder name');
     assert.ok(fm.description && fm.description.length > 20, 'description is present and descriptive');
+    assert.ok(content.includes('How to edit this artifact'), 'template ends with the edit-guide comment');
+    assert.ok(content.includes('name="viewport"'), 'template sets a viewport meta tag');
+    assert.ok(content.includes('<title>'), 'template sets a title');
   });
 }

@@ -57,7 +57,7 @@ h1 { font-size: 1.1rem; font-weight: 500; margin: 0; }
   var W = 960, H = 540;
   var ratio = Math.min(window.devicePixelRatio || 1, 2);
   function resize() {
-    var s = Math.min((window.innerWidth - 32) / W, (window.innerHeight - 64) / H);
+    var s = Math.max(0, Math.min((window.innerWidth - 32) / W, (window.innerHeight - 64) / H));
     canvas.style.width = (W * s) + 'px';
     canvas.style.height = (H * s) + 'px';
     canvas.width = W * ratio;
@@ -89,9 +89,11 @@ h1 { font-size: 1.1rem; font-weight: 500; margin: 0; }
     pointer.x = (e.clientX - r.left) / r.width * W;
     pointer.y = (e.clientY - r.top) / r.height * H;
   }
-  var t = 0;
-  function frame() {
-    t += 0.016;
+  var t = 0, last = null;
+  function frame(ts) {
+    if (last === null) last = ts;
+    t += (ts - last) / 1000;
+    last = ts;
     clear();
     draw();
     requestAnimationFrame(frame);

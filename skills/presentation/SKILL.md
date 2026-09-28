@@ -129,10 +129,13 @@ ul { text-align: left; }
   }
   document.addEventListener('keydown', function (e) {
     var k = e.key;
+    var handled = true;
     if (k === 'ArrowRight' || k === 'ArrowDown' || k === ' ' || k === 'PageDown') show(current + 1);
     else if (k === 'ArrowLeft' || k === 'ArrowUp' || k === 'PageUp') show(current - 1);
     else if (k === 'Home') show(0);
     else if (k === 'End') show(slides.length - 1);
+    else handled = false;
+    if (handled) e.preventDefault();
   });
   document.getElementById('themeBtn').addEventListener('click', function () {
     var html = document.documentElement;
