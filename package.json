@@ -1,0 +1,20 @@
+{
+  "name": "opencode-artifacts",
+  "version": "0.1.0",
+  "description": "opencode skills that generate self-contained HTML artifacts: presentations, interactive canvas, and HTML documents.",
+  "type": "module",
+  "main": ".opencode/plugins/artifacts.js",
+  "files": [
+    ".opencode",
+    "skills",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test tests/"
+  },
+  "keywords": ["opencode", "skills", "artifacts", "presentation", "canvas"],
+  "license": "MIT",
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.4.3"
+  }
+}
