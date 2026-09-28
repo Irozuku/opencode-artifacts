@@ -10,7 +10,7 @@
     "README.md"
   ],
   "scripts": {
-    "test": "node --test tests/"
+    "test": "node --test"
   },
   "keywords": ["opencode", "skills", "artifacts", "presentation", "canvas"],
   "license": "MIT",
