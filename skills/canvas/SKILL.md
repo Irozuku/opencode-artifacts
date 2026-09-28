@@ -108,7 +108,7 @@ h1 { font-size: 1.1rem; font-weight: 500; margin: 0; }
   }
   window.addEventListener('resize', resize);
   resize();
-  frame();
+  requestAnimationFrame(frame);
 })();
 </script>
 <!--
