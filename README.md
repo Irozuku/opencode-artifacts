@@ -45,7 +45,7 @@ with the package added to `~/.config/opencode/package.json`:
 ```json
 {
   "dependencies": {
-    "opencode-artifacts": "git+https://github.com/<owner>/opencode-artifacts.git"
+    "opencode-artifacts": "git+https://github.com/Irozuku/opencode-artifacts.git"
   }
 }
 ```
